@@ -1,6 +1,6 @@
 /** @format */
 
-import Product, { IProduct } from "../schema/products";
+import Product, { IProduct } from "../schema/products.schema";
 import { CreateProductDTO, UpdateProductDTO } from "../DTO";
 
 export const getAllProducts = async (): Promise<IProduct[]> => {

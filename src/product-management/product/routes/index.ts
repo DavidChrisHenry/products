@@ -6,8 +6,8 @@ import {
   createProduct,
   updateProduct,
   deleteProduct,
-} from "../services/productService";
-import { IProduct } from "../schema/products";
+} from "../services/product-service";
+import { IProduct } from "../schema/products.schema";
 
 const productRouter = Router();
 
@@ -20,7 +20,7 @@ const productRouter = Router();
 
 /**
  * @swagger
- * /product:
+ * /api/product:
  *   get:
  *     summary: Retrieve a list of products
  *     tags: [Products]
@@ -45,7 +45,7 @@ productRouter.get("/", async (req: Request, res: Response) => {
 
 /**
  * @swagger
- * /product/{id}:
+ * /api/product/{id}:
  *   get:
  *     summary: Retrieve a single product by ID
  *     tags: [Products]
@@ -78,7 +78,7 @@ productRouter.get("/:id", async (req: Request, res: Response) => {
 
 /**
  * @swagger
- * /product:
+ * /api/product:
  *   post:
  *     summary: Create a new product
  *     tags: [Products]
@@ -110,7 +110,7 @@ productRouter.post("/", async (req: Request, res: Response) => {
 
 /**
  * @swagger
- * /product/{id}:
+ * /api/product/{id}:
  *   put:
  *     summary: Update an existing product
  *     tags: [Products]
@@ -149,7 +149,7 @@ productRouter.put("/:id", async (req: Request, res: Response) => {
 
 /**
  * @swagger
- * /product/{id}:
+ * /api/product/{id}:
  *   delete:
  *     summary: Delete a product
  *     tags: [Products]

@@ -7,7 +7,7 @@ import {
   createUser,
   updateUser,
   deleteUser,
-} from "../services/userService";
+} from "../services/user-service";
 import { IUser } from "../schema/users";
 
 const userRouter = Router();
@@ -21,7 +21,7 @@ const userRouter = Router();
 
 /**
  * @swagger
- * /user:
+ * /api/user:
  *   get:
  *     summary: Retrieve a list of users
  *     tags: [Users]
@@ -46,7 +46,7 @@ userRouter.get("/", async (req: Request, res: Response) => {
 
 /**
  * @swagger
- * /user/{id}:
+ * /api/user/{id}:
  *   get:
  *     summary: Retrieve a single user by ID
  *     tags: [Users]
@@ -79,7 +79,7 @@ userRouter.get("/:id", async (req: Request, res: Response) => {
 
 /**
  * @swagger
- * /user:
+ * /api/user:
  *   post:
  *     summary: Create a new user
  *     tags: [Users]
@@ -111,7 +111,7 @@ userRouter.post("/", async (req: Request, res: Response) => {
 
 /**
  * @swagger
- * /user/{id}:
+ * /api/user/{id}:
  *   put:
  *     summary: Update an existing user
  *     tags: [Users]
@@ -150,7 +150,7 @@ userRouter.put("/:id", async (req: Request, res: Response) => {
 
 /**
  * @swagger
- * /user/{id}:
+ * /api/user/{id}:
  *   delete:
  *     summary: Delete a user
  *     tags: [Users]

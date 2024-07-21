@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import userRouter from "./users/routes";
 import productRouter from "./product-management/product/routes";
+import userProductRouter from "./product-management/user-product-junction/routes";
 import setupSwagger from "../swagger";
 dotenv.config();
 
@@ -26,8 +27,9 @@ mongoose
   });
 
 app.use(express.json());
-app.use("/user", userRouter);
-app.use("/product", productRouter);
+app.use("/api/user", userRouter);
+app.use("/api/product", productRouter);
+app.use("/api/buy-product", userProductRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

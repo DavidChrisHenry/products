@@ -1,7 +1,6 @@
 /** @format */
 
-// userSchema.ts
-import { SwaggerType } from "../../enums";
+import { SwaggerType } from "../enums";
 
 export const UserSchema = {
   type: SwaggerType.Object,
