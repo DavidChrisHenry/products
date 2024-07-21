@@ -5,12 +5,12 @@ import swaggerJsdoc, { Options } from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import { Express } from "express";
 import path from "path";
-import { SWAGGER_UI_INFO } from "../libs/common/data";
+import { SWAGGER_UI_INFO } from "../../libs/common/data";
 import {
   UserSchema,
   ProductSchema,
   UserProductSchema,
-} from "../libs/common/data";
+} from "../../libs/common/data";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -31,14 +31,11 @@ const options: Options = {
     },
   },
   apis: [
-    path.resolve(__dirname, "../src/users/routes/index.ts"),
+    path.resolve(__dirname, "../users/routes/index.ts"),
+    path.resolve(__dirname, "../product-management/product/routes/index.ts"),
     path.resolve(
       __dirname,
-      "../src/product-management/product/routes/index.ts"
-    ),
-    path.resolve(
-      __dirname,
-      "../src/product-management/user-product-junction/routes/index.ts"
+      "../product-management/user-product-junction/routes/index.ts"
     ),
   ],
 };
