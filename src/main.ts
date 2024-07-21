@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 import userRouter from "./users/routes";
 import productRouter from "./product-management/product/routes";
 import userProductRouter from "./product-management/user-product-junction/routes";
-import setupSwagger from "./swagger";
+import setupSwagger from "../swagger";
 dotenv.config();
 
 const app = express();
