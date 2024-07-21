@@ -3,7 +3,7 @@
 import path from "path";
 
 export function getSwaggerPaths() {
-  const isDev = process.env.NODE_ENV === "dev";
+  const isDev = process.env.NODE_ENV;
 
   const paths = isDev
     ? [
