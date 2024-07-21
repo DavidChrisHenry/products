@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev src/main.ts",
-    "start": "node dist/src/main.js",
+    "start": "if [ -f dist/src/main.js ]; then node dist/src/main.js; else echo 'File main.js does not exist'; fi",
     "build": "tsc && ls -la dist/src"
   },
   "engines": {
