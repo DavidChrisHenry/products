@@ -4,7 +4,7 @@ import { SwaggerType } from "../enums";
 
 export const UserSchema = {
   type: SwaggerType.Object,
-  required: ["name", "email", "country"],
+  required: ["name", "email", "country", "password"],
   properties: {
     id: {
       type: SwaggerType.String,
@@ -22,6 +22,11 @@ export const UserSchema = {
     country: {
       type: SwaggerType.String,
       description: "The country of the user",
+    },
+    password: {
+      type: SwaggerType.String,
+      description: "The password of the user",
+      writeOnly: true,
     },
   },
 };

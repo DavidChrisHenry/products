@@ -1,32 +1,18 @@
 /** @format */
 
 import path from "path";
+import * as glob from "glob";
 
 export function getSwaggerPaths() {
   const isDev = process.env.NODE_ENV === "dev";
 
-  const paths = isDev
-    ? [
-        path.resolve(__dirname, "../src/users/routes/index.ts"),
-        path.resolve(
-          __dirname,
-          "../src/product-management/product/routes/index.ts"
-        ),
-        path.resolve(
-          __dirname,
-          "../src/product-management/user-product-junction/routes/index.ts"
-        ),
-      ]
-    : [
-        path.resolve(__dirname, "../src/users/routes/index.js"),
-        path.resolve(
-          __dirname,
-          "../src/product-management/product/routes/index.js"
-        ),
-        path.resolve(
-          __dirname,
-          "../src/product-management/user-product-junction/routes/index.js"
-        ),
-      ];
+  const routesBaseDir = path.resolve(__dirname, "../src");
+
+  const filePattern = isDev
+    ? `${routesBaseDir}/**/routes/*.ts`
+    : `${routesBaseDir}/**/routes/*.js`;
+
+  const paths = glob.sync(filePattern, { absolute: true });
+
   return paths;
 }

@@ -9,6 +9,7 @@ import {
   deleteUser,
 } from "../services/user-service";
 import { IUser } from "../schema/users";
+import { CreateUserDTO } from "../DTO";
 
 const userRouter = Router();
 
